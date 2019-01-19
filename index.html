@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  <link rel="stylesheet" href="./css/style.min.css">
+  <title>Translater</title>
+</head>
+
+<body>
+  <header></header>
+  <content>
+    <div id="app">
+      <h1>{{title}}</h1>
+      <p>{{description}}</p>
+
+      <div id="up-area">
+        <select name="from-lang" v-model="selected">
+          <option v-for="language in languages" :value="language.code" :key="language.id">
+            {{language.name}}
+          </option>
+        </select>
+        <input type="text" v-model="word" placeholder="翻訳したい言葉を入力...">
+        <button v-on:click="listen">
+          聴く
+        </button>
+        <button v-on:click="speak">
+          話す
+        </button>
+      </div>
+  </content>
+
+  <footer>
+    @don_bu_rakko All Rights Reserved
+  </footer>
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script src="./js/main.js"></script>
+</body>
+
+</html>
